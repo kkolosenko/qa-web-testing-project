@@ -98,3 +98,12 @@
 | TC-053 | Verify general UI layout on Products page | User is logged in as `standard_user` | 1. Review header, menu, cart icon, sorting control, product cards and buttons <br> 2. Resize or navigate through the page <br> 3. Check alignment and overlapping elements | UI elements should be correctly aligned, readable and stable without overlapping or misplaced elements | UI elements are correctly aligned, readable and stable | PASS |
 | TC-054 | Verify browser Console for errors | User is logged in as `standard_user` and Chrome DevTools Console is open | 1. Clear the Console <br> 2. Navigate through the main application pages <br> 3. Open different product details <br> 4. Add and remove products from the cart <br> 5. Open the Cart page <br> 6. Proceed through the Checkout process <br> 7. Complete the order <br> 8. Observe the Console during all actions | No unexpected JavaScript errors or failed application-related requests should appear in the Console during normal application use | Message in console "Failed to load resources (in cart) | FAIL |
 | TC-055 | Checkout with invalid customer information | User is on the Checkout information page | 1. Enter invalid data in the **First Name** field (e.g. `12345`) <br> 2. Enter invalid data in the **Last Name** field (e.g. `!!!@@@`) <br> 3. Enter invalid data in the **Postal Code** field (e.g. `abcdef`) <br> 4. Click **Continue** | User should not be able to proceed to the Checkout Overview page. Appropriate validation errors should be displayed for invalid customer information | User is redirected to the Checkout Overview page despite entering invalid customer information | FAIL |
+
+## Cross-Browser Testing
+
+| Browser | Login | Products/UI | Cart | Checkout | Sorting | Logout | Result |
+|---|---|---|---|---|---|---|---|
+| Google Chrome | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| Safari | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+
+**Note:** Known application defects were reproduced consistently in both Google Chrome and Safari. No browser-specific issues were identified.
